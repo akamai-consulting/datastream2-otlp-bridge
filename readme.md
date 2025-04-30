@@ -19,7 +19,7 @@ The Akamai CDN configuration should provide a custom field with data formatted s
 ```bash
 spin build
 spin up
-spin aka deploy y --variable otlp_endpoint=https://otel-receiver.example.com/otlp-http/v1/traces
+spin aka deploy --variable otlp_endpoint=https://otel-receiver.example.com/otlp-http/v1/traces
 ```
 
 
