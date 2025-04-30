@@ -1,7 +1,7 @@
 # DataStream2 to OTEL Bridge
 
 This is a Spin Wasm function that acts as a bridge between [DataStream2](https://techdocs.akamai.com/datastream2/docs/welcome-datastream2)
-and an OTLP collector.
+and an OTLP collector.  The bridge runs as a serverless function on [Fermyon Wasm Functions](https://www.fermyon.com/wasm-functions).
 
 ![Example inage of trace with Akamai span](./docs/example-trace.png)
 
@@ -15,6 +15,8 @@ The Akamai CDN configuration should provide a custom field with data formatted s
 * ms (optional): timestamp with millisecond granularity.  If not provided, the default DS2 timestamp will be used, with a 1-second granularity.  This can be retrieved by reading `AK_CURRENT_TIME_MS` in advanced metadata.  Contact your Akamai Professional Services team for support.
 
 ### Building, running locally, deploying
+
+Install Fermyon Wasm Functions CLI with TypeScript tooling, as described in the [FwF Quickstart Guide](https://developer.fermyon.com/wasm-functions/quickstart)
 
 ```bash
 spin build
