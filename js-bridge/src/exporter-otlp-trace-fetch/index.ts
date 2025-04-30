@@ -1,0 +1,1 @@
+export { OTLPTraceExporter } from './OTLPTraceExporter';

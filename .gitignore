@@ -1,0 +1,6 @@
+main.wasm
+.spin/
+datastream2_*.json
+.vscode/
+.spin-aka/
+.DS_Store

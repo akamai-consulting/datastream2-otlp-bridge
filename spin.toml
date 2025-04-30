@@ -1,0 +1,28 @@
+spin_manifest_version = 2
+
+[application]
+name = "datastream2-otlp-bridge"
+version = "0.1.0"
+authors = ["Josh Johnson <josjohns@akamai.com>"]
+description = ""
+
+[variables]
+otlp_endpoint = { required = true }
+otlp_timeout_millis = { required = false, default="30000" }
+
+[[trigger.http]]
+route = "/..."
+component = "js-bridge"
+
+[component.js-bridge]
+source = "js-bridge/dist/js-bridge.wasm"
+allowed_outbound_hosts = ["https://*"]
+
+[component.js-bridge.build]
+command = "npm install && npm run build"
+workdir = "js-bridge"
+watch = ["src/**/*.ts"]
+
+[component.js-bridge.variables]
+otlp_endpoint = "{{ otlp_endpoint }}"
+otlp_timeout_millis = "{{ otlp_timeout_millis }}"
