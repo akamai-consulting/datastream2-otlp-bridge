@@ -1,9 +1,9 @@
 # DataStream2 to OTEL Bridge
 
 This is a Spin Wasm function that acts as a bridge between [DataStream2](https://techdocs.akamai.com/datastream2/docs/welcome-datastream2)
-and an OTLP collector.  The bridge runs as a serverless function on [Fermyon Wasm Functions](https://www.fermyon.com/wasm-functions).
+and an OTLP collector.  The bridge runs as a serverless function on [Akamai Functions](https://www.akamai.com/products/akamai-functions).
 
-![Example inage of trace with Akamai span](./docs/example-trace.png)
+![Example image of trace with Akamai span](./docs/example-trace.png)
 
 The DS2 receiver is exposed as `/v1/api/datastream2`. DS2 logs will be converted to Open Telemetry spans, and delivered to the endpoint defined in the `otlp_endpoint` variable, using OTLP/HTTP with JSON encoding.
 
@@ -16,7 +16,7 @@ The Akamai CDN configuration should provide a custom field with data formatted s
 
 ### Building, running locally, deploying
 
-Install Fermyon Wasm Functions CLI with TypeScript tooling, as described in the [FwF Quickstart Guide](https://developer.fermyon.com/wasm-functions/quickstart)
+Install Akamai  Functions CLI with TypeScript tooling, as described in the [Akamai Functions Quickstart Guide](https://techdocs.akamai.com/akamai-functions/docs/quickstart)
 
 ```bash
 spin build
